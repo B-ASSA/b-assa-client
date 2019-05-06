@@ -30,6 +30,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #4d4d4d;
 }
 
 #app :lang(en) {
@@ -41,5 +42,17 @@ body {
   margin: auto;
   margin-top: 16px;
   margin-bottom: 16px;
+}
+
+.wrapper-heading {
+  position: relative;
+  width: 100%;
+  display: block;
+  margin: 35px 0;
+  padding: 10px 0;
+  line-height: 34px;
+  border: 1px solid #eee;
+  font-size: 22px;
+  text-align: center;
 }
 </style>

@@ -1,6 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/pages/Home'
+import Company from '@/components/pages/Company'
+import Business from '@/components/pages/Business'
+import Contact from '@/components/pages/Contact'
+import Sitemap from '@/components/pages/Sitemap'
+import Privacy from '@/components/pages/Privacy'
+import Attention from '@/components/pages/Attention'
 
 Vue.use(Router)
 
@@ -15,17 +21,32 @@ export default new Router({
     {
       path: '/company',
       name: 'Company',
-      component: Home,
+      component: Company,
     },
     {
       path: '/business',
       name: 'Business',
-      component: Home,
+      component: Business,
     },
     {
       path: '/contact',
       name: 'Contact',
-      component: Home,
+      component: Contact,
+    },
+    {
+      path: '/sitemap',
+      name: 'Sitemap',
+      component: Sitemap,
+    },
+    {
+      path: '/privacy',
+      name: 'Privacy',
+      component: Privacy,
+    },
+    {
+      path: '/attention',
+      name: 'Attention',
+      component: Attention,
     },
   ],
 })
