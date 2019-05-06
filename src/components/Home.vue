@@ -1,5 +1,5 @@
 <template>
-  <div class="top">
+  <div class="home">
     <carousel :data="slides" lang="en"></carousel>
   </div>
 </template>
