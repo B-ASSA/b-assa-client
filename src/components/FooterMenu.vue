@@ -32,6 +32,7 @@ export default {
 <style scoped>
 #footer {
   height: 100px;
+  margin-top: 16px;
   border-top: 1px solid #eee;
   text-align: center;
 }

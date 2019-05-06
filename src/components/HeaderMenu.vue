@@ -38,7 +38,10 @@ export default {
 <style scoped>
 #header {
   height: 125px;
-  margin: 16px;
+  max-width: 1000px;
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
   text-align: center;
 }
 
