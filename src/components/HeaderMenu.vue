@@ -80,7 +80,7 @@ export default {
 
 #navPc ul li a::after {
   position: absolute;
-  bottom: -4px;
+  bottom: -5px;
   left: 0;
   content: '';
   width: 100%;
@@ -111,7 +111,7 @@ export default {
 
 #navPc .router-link-active::after {
   position: absolute;
-  bottom: -4px;
+  bottom: -5px;
   left: 0;
   content: '';
   width: 100%;
