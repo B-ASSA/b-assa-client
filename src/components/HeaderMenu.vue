@@ -38,8 +38,7 @@ export default {
 <style scoped>
 #header {
   height: 125px;
-  margin-top: 0px;
-  margin-bottom: 16px;
+  margin: 16px;
   text-align: center;
 }
 
@@ -64,8 +63,8 @@ export default {
   width: 100px;
   height: 50px;
   margin-top: auto;
-  margin-left: 10px;
-  margin-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   position: relative;
 }
 
@@ -121,11 +120,8 @@ export default {
 }
 
 #logo {
-  max-width: 184px;
   position: absolute;
-  top: 16px;
-  left: 16px;
-  z-index: 3000;
+  z-index: 100;
 }
 
 #logo img {
@@ -138,6 +134,9 @@ export default {
   width: 125px;
   height: 125px;
   background: #2976f2;
+}
+
+#logo .logo-test small {
   color: white;
   font-size: 30px;
   font-weight: bold;
