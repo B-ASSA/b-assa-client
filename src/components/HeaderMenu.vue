@@ -3,7 +3,7 @@
     <div id="logo">
       <!-- <img src="../assets/logo.png" /> -->
       <div class="logo-test">
-        <p>logo<br />sample</p>
+        <small lang="en">logo<br />sample</small>
       </div>
     </div>
     <nav id="navPc">
@@ -11,7 +11,7 @@
         <li v-for="(item, index) in items" :key="index">
           <router-link v-bind:to="item.path" exact>
             {{ item.mainTitle }}
-            <div class="subTitle">{{ item.subTitle }}</div>
+            <small class="subTitle" lang="en">{{ item.subTitle }}</small>
           </router-link>
         </li>
       </ul>
@@ -40,6 +40,7 @@ export default {
   height: 125px;
   margin-top: 0px;
   margin-bottom: 16px;
+  text-align: center;
 }
 
 #navPc {
@@ -47,9 +48,6 @@ export default {
   margin-left: auto;
   font-size: 16px;
   font-weight: bold;
-  font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', '游ゴシック体',
-    'メイリオ', Meiryo, 'Yu Gothic', YuGothic, 'Oswald', 'ＭＳ Ｐゴシック',
-    sans-serif;
 }
 
 #navPc ul {
@@ -105,7 +103,6 @@ export default {
 #navPc .subTitle {
   display: block;
   font-size: 11px;
-  font-family: Arial, Helvetica, 'sans-serif';
 }
 
 #navPc .router-link-active {
@@ -136,7 +133,8 @@ export default {
 }
 
 #logo .logo-test {
-  display: inline-block;
+  display: table-cell;
+  vertical-align: middle;
   width: 125px;
   height: 125px;
   background: #2976f2;

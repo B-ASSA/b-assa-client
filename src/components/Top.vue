@@ -1,6 +1,6 @@
 <template>
   <div class="top">
-    <carousel :data="slides"></carousel>
+    <carousel :data="slides" lang="en"></carousel>
   </div>
 </template>
 
