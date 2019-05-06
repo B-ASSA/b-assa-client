@@ -19,9 +19,9 @@ export default {
   data() {
     return {
       items: [
-        { mainTitle: 'サイトマップ', path: '/' },
-        { mainTitle: 'プライバシーポリシー', path: '/' },
-        { mainTitle: 'サイトご利用規約', path: '/' },
+        { mainTitle: 'サイトマップ', path: '/sitemap' },
+        { mainTitle: 'プライバシーポリシー', path: '/privacy' },
+        { mainTitle: 'サイトご利用規約', path: '/attention' },
       ],
       date: new Date().getFullYear(),
     }
