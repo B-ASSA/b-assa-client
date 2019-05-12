@@ -7,8 +7,12 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import vueSmoothScroll from 'vue-smooth-scroll'
 import HeaderMenu from '@/components/modules/HeaderMenu'
 import FooterMenu from '@/components/modules/FooterMenu'
+
+Vue.use(vueSmoothScroll)
 
 export default {
   name: 'App',

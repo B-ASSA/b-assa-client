@@ -1,6 +1,11 @@
 <template>
   <div id="footer">
     <ul class="footer-nav">
+      <li>
+        <a href="#app" v-smooth-scroll="{ duration: 750, offset: -50 }">
+          ページトップ
+        </a>
+      </li>
       <li v-for="(item, index) in items" :key="index">
         <router-link v-bind:to="item.path">
           {{ item.mainTitle }}
@@ -47,8 +52,7 @@ export default {
 }
 
 .footer-nav li {
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 14px;
   padding-left: 10px;
   padding-right: 10px;
 }
