@@ -16,12 +16,27 @@
         </li>
       </ul>
     </nav>
+    <Slide id="navSp" right noOverlay>
+      <router-link
+        v-for="(item, index) in items"
+        :key="index"
+        v-bind:to="item.path"
+        exact
+      >
+        {{ item.mainTitle }}
+      </router-link>
+    </Slide>
   </div>
 </template>
 
 <script>
+import { Slide } from 'vue-burger-menu'
+
 export default {
   name: 'HeaderMenu',
+  components: {
+    Slide,
+  },
   data() {
     return {
       items: [
@@ -32,17 +47,57 @@ export default {
       ],
     }
   },
+  created() {
+    window.addEventListener('resize', this.handleResize)
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.handleResize)
+  },
+  methods: {
+    handleResize() {
+      if (window.innerWidth < 800) {
+        document.getElementById('navPc').style.display = 'none'
+        document.getElementById('navSp').style.display = 'block'
+      } else {
+        document.getElementById('navPc').style.display = 'block'
+        document.getElementById('navSp').style.display = 'none'
+      }
+    },
+  },
 }
 </script>
 
 <style scoped>
-#header {
-  height: 125px;
-  max-width: 1000px;
-  margin: auto;
-  margin-top: 16px;
-  margin-bottom: 16px;
-  text-align: center;
+@media (min-width: 1000px) {
+  #header {
+    height: 125px;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  #navPc {
+    display: block;
+  }
+  #navSp {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  #header {
+    height: 125px;
+    max-width: 1000px;
+    margin: 16px;
+    text-align: center;
+  }
+  #navPc {
+    display: none;
+  }
+  #navSp {
+    display: block;
+  }
 }
 
 #navPc {
@@ -143,5 +198,19 @@ export default {
   color: white;
   font-size: 30px;
   font-weight: bold;
+}
+</style>
+
+<style>
+.bm-menu {
+  background-color: #2976f2;
+}
+
+.bm-item-list a {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
 }
 </style>
