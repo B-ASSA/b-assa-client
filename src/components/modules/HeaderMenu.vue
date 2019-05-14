@@ -1,10 +1,12 @@
 <template>
   <div id="header">
     <div id="logo">
-      <!-- <img src="../assets/logo.png" /> -->
-      <div class="logo-test">
-        <small lang="en">logo<br />sample</small>
-      </div>
+      <a id="logoPc" href="/">
+        <img src="../../assets/logo_square_blue.jpg" />
+      </a>
+      <a id="logoSp" href="/">
+        <img src="../../assets/logo_rectangle_blue.jpg" />
+      </a>
     </div>
     <nav id="navPc">
       <ul>
@@ -47,57 +49,18 @@ export default {
       ],
     }
   },
-  created() {
-    window.addEventListener('resize', this.handleResize)
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.handleResize)
-  },
-  methods: {
-    handleResize() {
-      if (window.innerWidth < 800) {
-        document.getElementById('navPc').style.display = 'none'
-        document.getElementById('navSp').style.display = 'block'
-      } else {
-        document.getElementById('navPc').style.display = 'block'
-        document.getElementById('navSp').style.display = 'none'
-      }
-    },
-  },
 }
 </script>
 
 <style scoped>
-@media (min-width: 1000px) {
-  #header {
-    height: 125px;
-    max-width: 1000px;
-    margin: auto;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    text-align: center;
-  }
-  #navPc {
-    display: block;
-  }
-  #navSp {
-    display: none;
-  }
-}
-
-@media (max-width: 1000px) {
-  #header {
-    height: 125px;
-    max-width: 1000px;
-    margin: 16px;
-    text-align: center;
-  }
-  #navPc {
-    display: none;
-  }
-  #navSp {
-    display: block;
-  }
+#header {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  top: 0;
+  text-align: center;
+  background-color: #ffffffe0;
+  z-index: 100;
 }
 
 #navPc {
@@ -105,31 +68,91 @@ export default {
   margin-left: auto;
   font-size: 16px;
   font-weight: bold;
+  display: none;
+}
+
+#navSp {
+  display: block;
+}
+
+#logoPc {
+  display: none;
+}
+
+#logoSp {
+  display: block;
+}
+
+#logo #logoPc img {
+  height: 125px;
+}
+
+#logo #logoSp img {
+  position: absolute;
+  height: 50px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@media (min-width: 800px) {
+  #header {
+    position: relative;
+    height: 125px;
+    width: auto;
+    margin: 16px;
+    background-color: transparent;
+  }
+
+  #navPc {
+    display: block;
+  }
+
+  #navSp {
+    display: none;
+  }
+
+  #logo {
+    position: absolute;
+  }
+
+  #logoPc {
+    display: block;
+  }
+
+  #logoSp {
+    display: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  #header {
+    max-width: 1000px;
+    margin: 16px auto;
+  }
 }
 
 #navPc ul {
   height: 125px;
-  margin-top: auto;
   margin-right: 16px;
-  padding: 0%;
+  padding: 0;
   display: flex;
   justify-content: flex-end;
   list-style: none;
 }
 
 #navPc ul li {
+  position: relative;
   width: 100px;
   height: 50px;
-  margin-top: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  position: relative;
+  margin: auto 10px 0 10px;
 }
 
 #navPc ul li a {
   position: absolute;
-  left: 0px;
-  top: 0px;
+  left: 0;
   width: 100%;
   color: #575757;
   text-decoration: none;
@@ -142,7 +165,7 @@ export default {
   content: '';
   width: 100%;
   height: 2px;
-  background: #0075c2;
+  background: #0067fe;
   transform: scale(0, 1);
   transform-origin: center top;
   transition: transform 0.3s;
@@ -153,7 +176,7 @@ export default {
 }
 
 #navPc ul li a:hover {
-  color: #0075c2;
+  color: #0067fe;
   transition: all 500ms ease;
 }
 
@@ -163,7 +186,7 @@ export default {
 }
 
 #navPc .router-link-active {
-  color: #0075c2;
+  color: #0067fe;
 }
 
 #navPc .router-link-active::after {
@@ -173,37 +196,22 @@ export default {
   content: '';
   width: 100%;
   height: 2px;
-  background: #0075c2;
+  background: #0067fe;
   transform: scale(1, 1);
-}
-
-#logo {
-  position: absolute;
-  z-index: 100;
-}
-
-#logo img {
-  max-width: 125px;
-}
-
-#logo .logo-test {
-  display: table-cell;
-  vertical-align: middle;
-  width: 125px;
-  height: 125px;
-  background: #2976f2;
-}
-
-#logo .logo-test small {
-  color: white;
-  font-size: 30px;
-  font-weight: bold;
 }
 </style>
 
 <style>
-#navSp div.bm-menu {
-  background-color: #2976f2;
+#navSp .bm-burger-button {
+  top: 15px;
+}
+
+#navSp .bm-burger-bars {
+  background-color: #7f7f7f;
+}
+
+#navSp .bm-menu {
+  background-color: #0067fe;
 }
 
 #navSp .bm-item-list a {
@@ -212,5 +220,9 @@ export default {
   color: white;
   text-decoration: none;
   white-space: nowrap;
+}
+
+#navSp .bm-cross {
+  background: white;
 }
 </style>

@@ -41,19 +41,24 @@ body {
   font-family: Arial, Helvetica, 'sans-serif';
 }
 
+#wrapper {
+  width: auto;
+  margin: 60px 16px 16px 16px;
+}
+
+@media (min-width: 800px) {
+  #wrapper {
+    width: auto;
+    margin: 16px;
+  }
+}
+
 @media (min-width: 1000px) {
   #wrapper {
     max-width: 1000px;
     margin: auto;
     margin-top: 16px;
     margin-bottom: 16px;
-  }
-}
-
-@media (max-width: 1000px) {
-  #wrapper {
-    width: auto;
-    margin: 16px;
   }
 }
 

@@ -69,6 +69,6 @@ export default {
 .copyright {
   line-height: 30px;
   color: white;
-  background-color: #2976f2;
+  background-color: #0067fe;
 }
 </style>
