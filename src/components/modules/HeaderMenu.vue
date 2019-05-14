@@ -202,11 +202,11 @@ export default {
 </style>
 
 <style>
-.bm-menu {
+#navSp div.bm-menu {
   background-color: #2976f2;
 }
 
-.bm-item-list a {
+#navSp .bm-item-list a {
   font-size: 16px;
   font-weight: bold;
   color: white;
