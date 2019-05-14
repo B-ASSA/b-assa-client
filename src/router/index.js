@@ -10,43 +10,45 @@ import Attention from '@/components/pages/Attention'
 
 Vue.use(Router)
 
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home,
+  },
+  {
+    path: '/company',
+    name: 'Company',
+    component: Company,
+  },
+  {
+    path: '/business',
+    name: 'Business',
+    component: Business,
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact,
+  },
+  {
+    path: '/sitemap',
+    name: 'Sitemap',
+    component: Sitemap,
+  },
+  {
+    path: '/privacy',
+    name: 'Privacy',
+    component: Privacy,
+  },
+  {
+    path: '/attention',
+    name: 'Attention',
+    component: Attention,
+  },
+]
+
 export default new Router({
   mode: 'history',
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: Home,
-    },
-    {
-      path: '/company',
-      name: 'Company',
-      component: Company,
-    },
-    {
-      path: '/business',
-      name: 'Business',
-      component: Business,
-    },
-    {
-      path: '/contact',
-      name: 'Contact',
-      component: Contact,
-    },
-    {
-      path: '/sitemap',
-      name: 'Sitemap',
-      component: Sitemap,
-    },
-    {
-      path: '/privacy',
-      name: 'Privacy',
-      component: Privacy,
-    },
-    {
-      path: '/attention',
-      name: 'Attention',
-      component: Attention,
-    },
-  ],
+  routes,
 })
