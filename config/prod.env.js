@@ -1,5 +1,5 @@
 'use strict'
 module.exports = {
   NODE_ENV: '"production"',
-  ROOT_BASE: '"b-assa/"'
+  ROOT_BASE: '"bassa-client/"',
 }
